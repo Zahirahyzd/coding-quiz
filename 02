@@ -1,0 +1,35 @@
+#Function to check eligibility for admission
+def check_eligibility (math_marks, addmath_marks, physics_marks, chemistry_marks, biology_marks):
+    #calculate total marks in sciences subject
+    science_total= physics_marks + chemistry_marks + biology_marks
+    #calculate total marks in maths subject
+    math_total= math_marks + addmath_marks
+
+
+    #check eligibility criteria
+    if (
+            math_marks >= 65,
+            addmath_marks >= 55,
+            physics_marks >= 45,
+            chemistry_marks >= 45,
+            biology_marks >= 45,
+        ) or (science_total >= 240) or (math_total >= 170) :
+        return "The candidate is eligible for admission"
+    else:
+        return "The candidate is not eligible for admission"
+
+#marks of every subject
+physics_marks = int('65') 
+chemistry_marks = int ('51')
+biology_marks = int ('42')
+math_marks = int ('95')
+addmath_marks = int ('95')
+
+
+#check eligibility
+result = check_eligibility(math_marks, addmath_marks, physics_marks, chemistry_marks, biology_marks)
+
+
+#output 
+print(f"(Phy :{physics_marks}, Chem :{chemistry_marks}, Bio :{biology_marks} , Math:{math_marks}, Add Math:{addmath_marks})")
+print(result)
